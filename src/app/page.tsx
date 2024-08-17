@@ -1,3 +1,17 @@
+"use client";
+
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
+
 export default function Home() {
-  return <main>Main</main>;
+  const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (pathname !== "/") {
+    } else {
+      router.push("/admin");
+    }
+  });
+  return <main></main>;
 }
